@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="crimes" path="."/>
+    <files-path
+        name="crime-photos"
+        path="cs4518_photos" />
+    <files-path
+        name="crime-logs"
+        path="cs4518_logs" />
+</paths>
