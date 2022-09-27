@@ -113,33 +113,4 @@ class MainActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
-
-    private fun updatePhoto(photoName: String, view: ImageView ){
-        // get the image from file system
-        if (view.tag != photoName) {
-            val photoFile = photoName?.let {
-                File(getDefaultProfileDir(this), it)
-            }
-
-            if (photoFile?.exists() == true) {
-//                view.doOnLayout { measuredView ->
-//                    val scaledBitmap = getScaledBitmap(
-//                        photoFile.path,
-//                        measuredView.width,
-//                        measuredView.height
-//                    )
-//                    view.setImageBitmap(scaledBitmap)
-//                    view.tag = photoFileName
-//                }
-                val options = BitmapFactory.Options()
-                options.inJustDecodeBounds = true
-                val bitmap = BitmapFactory.decodeFile(photoFile.path, options)
-                view.setImageBitmap(bitmap)
-                view.tag = photoName
-            } else {
-                view.setImageBitmap(null)
-                view.tag = null
-            }
-        }
-    }
 }
